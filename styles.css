@@ -1,0 +1,10 @@
+.flex-container{
+    display:flex;
+    background-color: gainsboro;
+    flex-direction: column;
+}
+
+.flex-container div{
+    margin : 10px;
+    text-align:center;
+}
