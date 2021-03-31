@@ -49,7 +49,11 @@ if (isguestuser()){
 }
 
 
-
+if (isset($_POST['Delete'])){
+    $DB->delete_records("local_rsocial",array("id"=>$_POST['Delete']));
+    $file_erased = \core\notification::add(get_string("photo_deleted", "local_rsocial"),\core\output\notification::NOTIFY_SUCCESS);
+    echo "<p>$file_erased</p>";
+}
 
 echo $OUTPUT->header();
 
@@ -116,12 +120,7 @@ foreach (array_reverse($myfiles) as $file) {
 }   
 
 
-if (isset($_POST['Delete'])){
-    $DB->delete_records("local_rsocial",array("id"=>$_POST['Delete']));
-    echo "<meta http-equiv='refresh' content='2'>";
-    $file_erased = \core\notification::add(get_string("photo_deleted", "local_rsocial"),\core\output\notification::NOTIFY_SUCCESS);
-    echo "<p>$file_erased</p>";
-}
+
 
 echo $OUTPUT->footer();
 

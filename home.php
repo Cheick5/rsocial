@@ -86,7 +86,7 @@ foreach (array_reverse($files) as $file) {
     $url = moodle_url::make_pluginfile_url(context_system::instance()->id, "local_rsocial", "photos", 0, "/", "$file->filename");
     $by =  get_string("by","local_rsocial");
     $likecount = $DB->count_records('local_likes',array('post_id'=>$file->id));
-    if($DB->get_records("local_likes",array("liker_id" =>$USER->id, "post_id" => $post_id )) == array()){
+    if($DB->get_records("local_likes",array("liker_id" =>$USER->id, "post_id" => $file->id)) == array()){
         $liked = 'https://i.imgur.com/rMi0n2j.png';
     }else{
         $liked = 'https://i.imgur.com/nK6kEtf.png';

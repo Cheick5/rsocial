@@ -10,4 +10,4 @@ $string["profile"] = "Mi perfil";
 $string["home"] = "Inicio";
 $string["by"] = "Por";
 $string["Good_upload"] = "Tu imagen ha sido subida satisfactoriamente";
-$string["photo_deleted"] = "Tu foto será borrada ahora";
+$string["photo_deleted"] = "Tu foto fue borrada";
